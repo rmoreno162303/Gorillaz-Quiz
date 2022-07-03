@@ -1,0 +1,12 @@
+body {
+    color:gainsboro;
+}
+
+.choice-container {
+    display: flex;
+    margin-bottom: 8px;
+    width: 80%;
+    background-color: blanchedalmond;
+    font-size: 5px;
+
+}
