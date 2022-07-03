@@ -1,10 +1,10 @@
-const question = document.querySelector(#question);
+const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choiceText'));
 
 let currentQuestion = {}
 let acceptingAnswers = true
 let score = 0;
-let questionContainer = 0;
+let questionCounter = 0;
 let availableQue = []
 
 let questions = [
@@ -14,7 +14,7 @@ let questions = [
         choice2: 'Austin',
         choice3: 'Eagle Pass',
         choice4: 'El Indio',
-        answer: 'El Indio'
+        answer: 'El Indio',
     },
     {
         question: "De donde es Ruth?",
@@ -22,8 +22,7 @@ let questions = [
         choice2: 'Austin',
         choice3: 'Eagle Pass',
         choice4: 'El Indio',
-        answer: 'Eagle Pass'
-   
+        answer: 'Eagle Pass',
     },
     {
         question: "De donde es Henry?",
@@ -31,12 +30,29 @@ let questions = [
         choice2: 'Austin',
         choice3: 'England',
         choice4: 'El Indio',
-        answer: 'England'
+        answer: 'England',
+    },
+    {
+        question: "De donde es Steve?",
+        choice1: 'San Marcos',
+        choice2: 'Austin',
+        choice3: 'Eagle Pass',
+        choice4: 'El Indio',
+        answer: 'Eagle Pass',
+    },
+    {
+        question: "De donde es Welita Mela?",
+        choice1: 'Monterey',
+        choice2: 'Austin',
+        choice3: 'England',
+        choice4: 'El Indio',
+        answer: 'Monterey',
     }
 
 ]
 
-const MAX_QUESTIONS =  3;
+// const SCORE_POINTS = 100;
+const MAX_QUESTIONS =  5;
 
 startGame = () => {
     questionCounter = 0;
@@ -46,7 +62,7 @@ startGame = () => {
 }
 
 getNewQuestion = () => {
-    if(availableQue.length === 0 || questionContainer > MAX_QUESTIONS) {
+    if(availableQue.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score)
 
         return window.location.assign('/end.html')
@@ -69,7 +85,7 @@ getNewQuestion = () => {
 }
 
 choices.forEach(choice => {
-    choice.addEventListener('click', e=> {
+    choice.addEventListener('click', e => {
         if(!acceptingAnswers) return 
 
         acceptingAnswers = false

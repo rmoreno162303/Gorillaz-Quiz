@@ -1,4 +1,4 @@
-var headSta = document.querySelector(".headSta");
+ var headSta = document.querySelector(".headSta");
 var parOne = document.querySelector(".parOne");
 var startBut = document.querySelector(".startBut");
 
