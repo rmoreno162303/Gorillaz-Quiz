@@ -1,9 +1,9 @@
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choiceText'));
 
-var timer = document.getElementById('timer');
+var timer = document.getElementById('#timer');
 var timeLeft = 61;
-var score = document.getElementById('finalScore')
+var score = document.getElementById('#finalScore')
 
 
 let currentQuestion = {}
@@ -16,53 +16,93 @@ let availableQue = []
 
 let questions = [
     { 
-        question: "De donde soy?",
-        choice1: 'San Marcos',
-        choice2: 'Austin',
-        choice3: 'Eagle Pass',
-        choice4: 'El Indio',
-        answer: 'El Indio',
+        question: "Which band member supposedly Fed-Exed him/herself to an audition for the band?",
+        choice1: '2D',
+        choice2: 'Russel',
+        choice3: 'Murdoc',
+        choice4: 'Noodle',
+        answer: 'Noodle',
     },
     {
-        question: "De donde es Ruth?",
-        choice1: 'San Marcos',
-        choice2: 'Austin',
-        choice3: 'Eagle Pass',
-        choice4: 'El Indio',
-        answer: 'Eagle Pass',
+        question: "Where do the Gorillaz live?",
+        choice1: 'Ape Studios',
+        choice2: 'Gorilla Studios',
+        choice3: 'Monkey Studios',
+        choice4: 'Kong Studios',
+        answer: 'Kong Studios',
     },
     {
-        question: "De donde es Henry?",
-        choice1: 'San Marcos',
-        choice2: 'Austin',
-        choice3: 'England',
-        choice4: 'El Indio',
-        answer: 'England',
+        question: "Who produced the Gorillaz's first album?",
+        choice1: 'Danger Mouse',
+        choice2: 'Damon Albarn',
+        choice3: 'Dan the Automator',
+        choice4: 'David Foster',
+        answer: 'Dan the Automator',
     },
     {
-        question: "De donde es Steve?",
-        choice1: 'San Marcos',
-        choice2: 'Austin',
-        choice3: 'Eagle Pass',
-        choice4: 'El Indio',
-        answer: 'Eagle Pass',
+        question: "Why did Russel get kicked out fo private school?",
+        choice1: 'He was a heretic',
+        choice2: 'He drove drunk',
+        choice3: 'He broke a school drumset',
+        choice4: 'He was possessed',
+        answer: 'He was possessed',
     },
     {
-        question: "De donde es Welita Mela?",
-        choice1: 'Monterey',
-        choice2: 'Austin',
-        choice3: 'England',
-        choice4: 'El Indio',
-        answer: 'Monterey',
+        question: "What does the name 2D stand for?",
+        choice1: 'Two Dents',
+        choice2: 'Two Dots',
+        choice3: 'Two Dimensions',
+        choice4: 'Nothing, it is made up',
+        answer: 'Two Dents',
+    },
+    {
+        question: "What is 2d's real name?",
+        choice1: 'Pol Pot',
+        choice2: 'Stuart Pot',
+        choice3: 'Stuart Little',
+        choice4: 'Stuart Pol',
+        answer: 'Stuart Pot',
+    },
+    {
+        question: "What is the name of Russel's ghost friend who raps in songs on the self-titled Gorillaz album?",
+        choice1: 'Del',
+        choice2: 'Stu',
+        choice3: 'Dan',
+        choice4: 'Jamie',
+        answer: 'Del',
+    },
+    {
+        question: "Who is the voice behind Noodle?",
+        choice1: 'Miho Hatori',
+        choice2: 'Utada Hikaru',
+        choice3: 'Ayumi Hamasaki',
+        choice4: 'Yuka Honda',
+        answer: 'Miho Hatori',
+    },
+    {
+        question: "Who is the real-life personality of 2D?",
+        choice1: 'Damon Albarn',
+        choice2: 'Dan the Automator',
+        choice3: 'Jamie Hewlett',
+        choice4: 'Danger Mouse',
+        answer: 'Damon Albarn',
+    },
+    {
+        question: "Who has attempted to jump over Russel on a 3-wheeled bike?",
+        choice1: '2D',
+        choice2: 'Del',
+        choice3: 'Noodle',
+        choice4: 'Murdoc',
+        answer: '2D',
     }
 
 ]
 
 const SCORE_POINTS = -5;
-const MAX_QUESTIONS =  5;
+const MAX_QUESTIONS =  10;
 
 startGame = () => {
-    startTimer();
+    // startTimer();
     questionCounter = 0;
     score = 60
     availableQue = [...questions]
@@ -70,15 +110,30 @@ startGame = () => {
     getNewQuestion()
 }
 
-function startTimer() {
-    timer = setInterval(function() {
-        timeLeft--;
-        timer.textContent = timeLeft;
-        if (timeLeft === 0) {
-            clearInterval(timer);
-        }
-    })
-}
+// function startTimer() {
+//     question.textContent = questions[availableQue].question;
+//         // startGame()
+//         timeLeft = 61
+//         var timeInterval = setInterval(function() {
+//             if(timeLeft > 0) {
+//                 score.textContent = "Your score is " + score;
+//                 timer.textContent = "You have " + timeLeft + " seconds left";
+//                 timeLeft--;
+//             }else{
+//                 timer.textContent = "Game Over";
+//                 clearInterval(timeInterval);
+//             };
+//         }, 1000);
+    
+    // displayAnswers()
+    // (function() {
+//         timeLeft--;
+//         timer.textContent = timeLeft;
+//         if (timeLeft === 0) {
+//             clearInterval(timer);
+//         }
+//     })
+// }
 
 // function gameClock () {
 //     availableQue.textContent = questions[questionIndex].question;
@@ -138,7 +193,6 @@ choices.forEach(choice => {
 
         }, 1000)
     })
-
 // score
 
 startGame()
