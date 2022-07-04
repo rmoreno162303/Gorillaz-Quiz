@@ -2,7 +2,9 @@
 var parOne = document.querySelector(".parOne");
 var startBut = document.querySelector(".startBut");
 
-var timer;
+var timer = document.getElementById('timer');
+var score = document.getElementById('currentScore')
+
 
 
 // headSta.children[0].textContent = "Code Quiz";
@@ -21,6 +23,7 @@ function startGame() {
     console.log("started")
     startButton.classList.add('hide')
     questionContainer.classList.remove('hide')
+    gameClock()
     nextQuestion()
 
 

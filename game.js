@@ -1,11 +1,18 @@
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choiceText'));
 
+var timer = document.getElementById('timer');
+var timeLeft = 61;
+var score = document.getElementById('currentScore')
+
+
 let currentQuestion = {}
 let acceptingAnswers = true
-let score = 0;
+// let score = 0;
 let questionCounter = 0;
 let availableQue = []
+
+
 
 let questions = [
     { 
@@ -55,17 +62,45 @@ let questions = [
 const MAX_QUESTIONS =  5;
 
 startGame = () => {
+    startTimer();
     questionCounter = 0;
     score = 0
     availableQue = [...questions]
+    // gameClock()
     getNewQuestion()
 }
+
+function startTimer() {
+    timer = setInterval(function() {
+        timeLeft--;
+        timer.textContent = timeLeft;
+        if (timeLeft === 0) {
+            clearInterval(timer);
+        }
+    })
+}
+
+// function gameClock () {
+//     availableQue.textContent = questions[questionIndex].question;
+//     startGame();
+    // timeLeft = 61
+//     var timeInterval = setInterval(function() {
+//         if(timeLeft > 0) {
+//             score.textContent = "Score:" + score;
+//             timer.textContent = timeLeft + " seconds left.";
+//             timeLeft--;
+//         }else{
+//             timer.textContent = "Game Over";
+//             clearInterval(timeInterval);
+//         };
+//     }, 1000); 
+// };
 
 getNewQuestion = () => {
     if(availableQue.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score)
 
-        return window.location.assign('/end.html')
+        return window.location.assign('end.html')
     }
     
     questionCounter++
@@ -91,6 +126,7 @@ choices.forEach(choice => {
         acceptingAnswers = false
         const selectedChoice = e.target
         const selectedAnswer = selectedChoice.dataset['number']
+        timeLeft -= 10;
 
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
