@@ -9,17 +9,18 @@
 </head>
 <body>
     <div class="container">
-        <div id="end" class="flex-center flex-column">
-            <h1>Thanks for playing!</h1>
-            <h2>Highscores:</h2>
-            <h3 id="inputNameHead"> Enter your initials </h3>
-            <input type="text" placeholder="Enter your initials" id="nameInput">
-            <button id="submitName">Save</button>
-            <ol id=" highScores"></ol>
-            <a href="game.html" class="btn">Play Again</a>
-            <a href="index.html" class="btn">Go Home</a>
-        </div> 
+     <div id="end" class="flex-center flex-column">
+        <h1 id="finalScore">0</h1>
+        <form class="endFormContainer">
+            <h2 id="endText">Enter your initials</h2>
+            <input type="text" name="name" id="username" placeholder="Enter your initials">
+            <button class="btn" id="saveScoreBtn" type="submit" onclick="saveHighScores(event)">Save</button>
+        </form>
+        <a href="game.html" class="btn">Play Again</a>
+        <a href="index.html" class="btn">Go Home</a>
+     </div>
     </div>
+    <script src="end.js"></script>
     
 </body>
 </html>
@@ -30,3 +31,17 @@
     <input type="text" name="name" id="username" placeholder="Enter your initials">
     <button class="btn" id="saveScoreBtn" type="submit" onclick="saveHighScore(event)" disabled>Save</button>
 </form> -->
+
+<!-- <div class="container">
+    <div id="end" class="flex-center flex-column">
+        <h1>Thanks for playing!</h1>
+        <h2>Highscores:</h2>
+        <h3 id="inputNameHead"> Enter your initials </h3>
+        <input type="text" placeholder="Enter your initials" id="nameInput">
+        <button id="submitName" type="submit" onclick="saveHighScore(event)" disabled>Save</button>
+
+        <ol id=" highScores"></ol>
+        <a href="game.html" class="btn">Play Again</a>
+        <a href="index.html" class="btn">Go Home</a>
+    </div> 
+</div> -->

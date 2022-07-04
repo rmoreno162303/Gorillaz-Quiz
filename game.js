@@ -3,12 +3,12 @@ const choices = Array.from(document.querySelectorAll('.choiceText'));
 
 var timer = document.getElementById('timer');
 var timeLeft = 61;
-var score = document.getElementById('currentScore')
+var score = document.getElementById('finalScore')
 
 
 let currentQuestion = {}
 let acceptingAnswers = true
-// let score = 0;
+// let score = 60;
 let questionCounter = 0;
 let availableQue = []
 
@@ -58,13 +58,13 @@ let questions = [
 
 ]
 
-// const SCORE_POINTS = 100;
+const SCORE_POINTS = -5;
 const MAX_QUESTIONS =  5;
 
 startGame = () => {
     startTimer();
     questionCounter = 0;
-    score = 0
+    score = 60
     availableQue = [...questions]
     // gameClock()
     getNewQuestion()
@@ -126,13 +126,13 @@ choices.forEach(choice => {
         acceptingAnswers = false
         const selectedChoice = e.target
         const selectedAnswer = selectedChoice.dataset['number']
-        timeLeft -= 10;
+        // timeLeft -= 10;
 
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+        let classToApply = selectedAnswer == currentQuestion.answer
 
-        // if(classToApply === 'incorrect') {
-        //     timer
-        // }
+        if(classToApply === 'incorrect') {
+            incrementScore(SCORE_POINTS)
+        }
         selectedChoice.parentElement.classList.remove(classToApply)
         getNewQuestion()
 
