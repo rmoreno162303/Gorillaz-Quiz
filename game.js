@@ -1,16 +1,19 @@
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choiceText'));
+// choiceContent
 
-var timer = document.getElementById('#timer');
-var timeLeft = 61;
-var score = document.getElementById('#finalScore')
+var quizTimerEl = document.querySelector('#timer');
+console.log( quizTimerEl);
+// var quizTimer = "";
+var timeLeft = 60;
+var scoreEl = document.getElementById('#finalScore');
 
 
-let currentQuestion = {}
-let acceptingAnswers = true
-// let score = 60;
+let currentQuestion = {};
+let acceptingAnswers = true;
+let score = 0;
 let questionCounter = 0;
-let availableQue = []
+let availableQue = [];
 
 
 
@@ -101,55 +104,27 @@ let questions = [
 const SCORE_POINTS = -5;
 const MAX_QUESTIONS =  10;
 
-startGame = () => {
-    // startTimer();
-    questionCounter = 0;
-    score = 60
+
+function startGame() {
+    startTimer();
+    questionIndex = 0;
+    score = 0
     availableQue = [...questions]
-    // gameClock()
     getNewQuestion()
 }
 
-// function startTimer() {
-//     question.textContent = questions[availableQue].question;
-//         // startGame()
-//         timeLeft = 61
-//         var timeInterval = setInterval(function() {
-//             if(timeLeft > 0) {
-//                 score.textContent = "Your score is " + score;
-//                 timer.textContent = "You have " + timeLeft + " seconds left";
-//                 timeLeft--;
-//             }else{
-//                 timer.textContent = "Game Over";
-//                 clearInterval(timeInterval);
-//             };
-//         }, 1000);
-    
-    // displayAnswers()
-    // (function() {
-//         timeLeft--;
-//         timer.textContent = timeLeft;
-//         if (timeLeft === 0) {
-//             clearInterval(timer);
-//         }
-//     })
-// }
+function startTimer() {
+    quizTimer = setInterval(function() {
+    timeLeft--; // timeLeft= timeLeft-1;
+    quizTimerEl.textContent = timeLeft + " seconds left";
+    if(timeLeft === 0) {
+        clearInterval(quizTimer);
+        return window.location.assign('end.html')
+    }
+   
+        }, 1000) 
+}
 
-// function gameClock () {
-//     availableQue.textContent = questions[questionIndex].question;
-//     startGame();
-    // timeLeft = 61
-//     var timeInterval = setInterval(function() {
-//         if(timeLeft > 0) {
-//             score.textContent = "Score:" + score;
-//             timer.textContent = timeLeft + " seconds left.";
-//             timeLeft--;
-//         }else{
-//             timer.textContent = "Game Over";
-//             clearInterval(timeInterval);
-//         };
-//     }, 1000); 
-// };
 
 getNewQuestion = () => {
     if(availableQue.length === 0 || questionCounter > MAX_QUESTIONS) {
