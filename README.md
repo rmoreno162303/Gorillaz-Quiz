@@ -13,13 +13,19 @@ Need to update code to save initials and score to the highscores page.
 
 
 #### Collaborators
-I worked with Kyle Baca and Sara Baqla to complete this project. I have attached their Github repositories. 
+I worked with Kyle Baca and Sara Baqla to complete this project. I have attached their Github repositories.  
+
 
 Kyle 
 https://github.com/kyle-david1/Code-Quiz
 
 Sara
 https://github.com/missatrox44/04-code-quiz
+
+
+Quiz content was sourced from funtrivia.com. The Link is provided below.
+https://www.funtrivia.com/trivia-quiz/Music/All-About-Gorillaz-215454.html
+
 
 #### Link to Website
 https://rmoreno162303.github.io/challengefourroberto/
