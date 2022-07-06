@@ -23,7 +23,7 @@ Sara
 https://github.com/missatrox44/04-code-quiz
 
 
-Quiz content was sourced from funtrivia.com. The Link is provided below.
+Quiz content was sourced from funtrivia.com. The Link is provided below. <br/>
 https://www.funtrivia.com/trivia-quiz/Music/All-About-Gorillaz-215454.html
 
 
