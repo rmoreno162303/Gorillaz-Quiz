@@ -3,7 +3,7 @@
 ##challengefourroberto
 
 ### Project Description
-Attached you will find the link to the Gorillaz quiz you requested. When you start the quiz, a timer starts and you are presented with a question. When you answer a question, you are presented with a series of questions until the game is over and you are prompted to save your initials. I need to finalize code to save score to highscore page. 
+Attached you will find the link to the Gorillaz quiz. When you start the quiz, a timer starts and you are presented with a question. When you answer a question, you are presented with a series of questions until the game is over and you are prompted to save your initials.
 
 #### Support
 Feel free to email Roberto Moreno with any questions or suggestions. rmoreno162303@gmail.com
@@ -22,3 +22,4 @@ Sara
 https://github.com/missatrox44/04-code-quiz
 
 #### Link to Website
+https://rmoreno162303.github.io/challengefourroberto/
